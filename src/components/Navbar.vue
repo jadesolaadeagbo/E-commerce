@@ -1,6 +1,6 @@
 <template>
-<nav class="navbar navbar-expand-lg navbar-light px-10 py-5 justify-content-between">
-  <a class="navbar-brand h1" href="#">EF-Commerce</a>
+<nav class="navbar navbar-expand-lg navbar-light px-10 py-5 justify-content-between bg-danger text-white">
+  <a class="navbar-brand h1 text-white" href="#">EF-Commerce</a>
   
 
   <div class="d-flex gap-10">
@@ -18,6 +18,8 @@
 </script>
 
 <style>
-
+.navbar-brand{
+  font-size: 30px;
+}
 
 </style>

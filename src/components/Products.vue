@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 30%;">
+    <div class="wholecard card" >
   <img class="card-img-top" src="../assets/shoe.jpg" alt="Card image cap">
   <div class="card-body">
     <span class="d-flex justify-content-between align-items-center">
@@ -20,7 +20,7 @@
         <button class="addtocart bg-success">Add to cart</button>
     </span>
    </div>
-</div>
+    </div>
 </template>
 
 <script>
@@ -32,6 +32,9 @@ export default{
 </script>
 
 <style>
+.wholecard{
+    width: 30%;
+}
 .card-img-top{
     width: 100%;
     height: 300px;
@@ -40,5 +43,11 @@ export default{
     padding: 10px 7px;
     cursor: pointer;
     border-radius:8px;
+}
+
+@media(max-width: 768px){
+    .wholecard{
+        width: 48%;
+    }
 }
 </style>

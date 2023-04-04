@@ -1,10 +1,9 @@
 <template>
-    <div class="heroContainer d-flex align-center">
+    <div class="heroContainer d-flex align-center text-danger justify-content-around">
         <div class="sideTexts d-block ml-10">
-            <span class="mainheader h1">Welcome to EF-commerce</span><br>
-            <span class="subheader h1 ">Super value deals</span><br>
-            <span class="subheader h1">On all products</span><br>
-            <span>Save more with coupons & get up to 70% off!</span>
+            <span class="mainheader h1 text-capitalize">AFFORDABLE FASHION</span><br>
+            <span class="subheader h1 ">Super value deals on all products</span><br>
+            <p class="littleText">Save more with coupons & get up to 70% off!</p>
         </div>
         
         <img src="../assets/woman.png" class="heroImg">
@@ -27,7 +26,11 @@
     width: 40%;
 }
 .mainheader{
-    font-size: 56px;
+    font-size: 72px;
+}
+.littleText{
+    padding-top:20px;
+    font-size: 24px;
 }
  
 @media(max-width: 768px){
