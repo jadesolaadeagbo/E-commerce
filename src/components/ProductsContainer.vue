@@ -19,7 +19,7 @@
 
                 <span class="d-flex justify-content-between align-items-center mt-3">                           
 
-                        <form>
+                        <!-- <form>
                             <select class="border opt" >
                                 <option value="1"> 1 </option>
                                 <option value="2"> 2 </option>
@@ -42,18 +42,21 @@
                                 <option value="19"> 19</option>
                                 <option value="20"> 20</option>
                             </select>
-                        </form>
-
-                    <button class="addtocart bg-danger text-white" @click="addToCart()">Add to cart</button>
-                </span>
-                
-                <!-- <form>
-                    <select class="border" >
+                        </form> -->
+                        
+                        <form>
+                    <select class="border"  ><!-- v-model="quant" -->
+                        
                         <option v-bind:key="quantity"
               v-for="quantity in quantityArray"
-              :value="quantity" class="dropdownNo">{{ quantity }}</option>
+              :value="quantity" class="opt">{{  quantity }}</option>
                     </select>                    
-                </form> -->
+                </form>
+                    <button class="addtocart bg-danger text-white" @click="addToCart(id)">Add to cart</button>
+                </span>
+                
+            <!-- <p>This is a p tag: {{ quant }}</p> -->
+                
             </div>
     </div>
     </div>
@@ -69,29 +72,48 @@
                 res: [],
                 products:[],
                 cart: null,
-                // selected: 1,
-                // quantityArray:[],
+                selected: 1,
+                quantityArray:[],
+                quant: '',
             }
         },
 
         mounted() {
-            axios.get("https://fakestoreapi.com/products").then((response) =>{
+            this.fetchProducts();
+            this.incrementQuantity();
+
+        },
+        methods: {
+            fetchProducts(){
+                axios.get("https://fakestoreapi.com/products").then((response) =>{
                 console.log(response);
                 this.res = response.data;
             }).catch((errors) =>{
                 console.log(errors)
             })
-        },
-        
-            // mounted () {
-            //     for (let i = 1; i <= 20; i++) {
-            //     this.quantityArray.push(i);
-            //     }
+            },
+            incrementQuantity(){
+                for (let i = 1; i <= 20; i++) {
+                this.quantityArray.push(i);
+                }
 
-            //     if (this.quantity > 1) {
-            //     this.selected = this.quantity;
-            //     }
-            // },
+                if (this.quantity > 1) {
+                this.selected = this.quantity;
+                }
+            },
+            addToCart(id){
+                axios.post('https://fakestoreapi.com/carts',{
+                    products:[{productId: id,quantity:this.quant}]
+                }).then((response) => {
+                    console.log(response)
+                    localStorage.setItem('cart', response.data.id)
+                } )
+            },
+            checkCart(){
+                let item = localStorage.getItem('cart')
+                
+            }
+        },
 
     //      methods:{                addToCart (id) {
     //   let data = {
@@ -143,7 +165,10 @@
 }
 
 .opt{
-    padding: 10px;
+    padding: 20px;
+}
+select{
+    appearance: none;
 }
 .wholecard{
     width: 30%;
