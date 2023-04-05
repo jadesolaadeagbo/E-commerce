@@ -22,4 +22,11 @@
   font-size: 30px;
 }
 
+@media(max-width: 414px){
+  .navbar-brand{
+    font-size: 20px;
+    padding: 0px ;
+  }
+}
+
 </style>

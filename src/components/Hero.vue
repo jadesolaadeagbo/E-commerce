@@ -1,7 +1,7 @@
 <template>
-    <div class="heroContainer d-flex align-center text-danger justify-content-around">
-        <div class="sideTexts d-block ml-10">
-            <span class="mainheader h1 text-capitalize">AFFORDABLE FASHION</span><br>
+    <div class="heroContainer d-lg-flex d-md-flex align-center text-danger justify-content-around">
+        <div class="sideTexts d-lg-block d-md-block ml-10">
+            <span class="mainheader h1">AFFORDABLES</span><br>
             <span class="subheader h1 ">Super value deals on all products</span><br>
             <p class="littleText">Save more with coupons & get up to 70% off!</p>
         </div>
@@ -35,12 +35,31 @@
  
 @media(max-width: 768px){
     .mainheader{
-        font-size: 24px;
+        font-size: 39px;
     }
     .subheader{
-        font-size: 24px;
+        font-size: 20px;
     }
+    .littleText{
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    .heroImg{
+        width: 50%
+    }
+}
+
+@media(max-width: 414px){
     .heroContainer{
+        
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .heroImg{
+        display:none
+    }
+    .mainheader{
+        
     }
 }
 
