@@ -45,7 +45,7 @@
                         </form> -->
                         
                         <form>
-                    <select class="border" ><!-- v-model="quant" -->
+                    <select class="border" v-model="quant"><!-- v-model="quant" -->
                         
                         <option v-bind:key="quantity"
               v-for="quantity in quantityArray"
@@ -55,7 +55,7 @@
                     <button class="addtocart bg-danger text-white" @click="addToCart(id)">Add to cart</button>
                 </span>
                 
-            <!-- <p>This is a p tag: {{ quant }}</p> -->
+             <p>This is a p tag: {{ quant }}</p>
                 
             </div>
     </div>
@@ -74,7 +74,7 @@
                 cart: null,
                 selected: 1,
                 quantityArray:[],
-                //quant: '',
+                quant: '',
             }
         },
 
