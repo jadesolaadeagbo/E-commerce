@@ -45,7 +45,7 @@
                         </form> -->
                         
                         <form>
-                    <select class="border"  ><!-- v-model="quant" -->
+                    <select class="border"  v-model="quant">
                         
                         <option v-bind:key="quantity"
               v-for="quantity in quantityArray"
